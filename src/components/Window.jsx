@@ -6,7 +6,10 @@ import { fetchBalance } from "../redux/slices/balanceSlice";
 
 function Window() {
   const isMounted = React.useRef(false);
-  const [address, setAddress] = React.useState(localStorage.getItem("Address"));
+  const [address, setAddress] = React.useState(
+    localStorage.getItem("Address") ||
+      "EQADXNIAXFYrWD6kfnc5HhPueziaSIeJ-MINJmHW_Unf5OUK"
+  );
   const [send, setSend] = React.useState(false);
   const dispatch = useDispatch();
 
